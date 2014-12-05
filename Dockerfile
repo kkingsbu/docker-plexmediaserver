@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 MAINTAINER J.R. Arseneau <http://github.com/jrarseneau>
-
+W
 ENV LANG en_US.UTF-8
 RUN locale-gen $LANG
 
@@ -17,7 +17,6 @@ RUN apt-get install -qy avahi-daemon avahi-utils libavahi-client3 wget
 
 # Download and install Plex (non plexpass)
 # This gets the latest non-plexpass version
-#ENV PLEX=`wget -q --no-check-certificate -O - https://plex.tv/downloads | grep -o '[^"'"'"']*amd64.deb'|grep -v binaries`
 RUN wget -P /tmp `wget -q --no-check-certificate -O - https://plex.tv/downloads | grep -o '[^"'"'"']*amd64.deb'|grep -v binaries`
 RUN dpkg -i /tmp/plex*.deb
 RUN rm -f /tmp/plex*.deb
