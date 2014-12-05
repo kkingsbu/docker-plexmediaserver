@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 MAINTAINER J.R. Arseneau <http://github.com/jrarseneau>
-W
+
 ENV LANG en_US.UTF-8
 RUN locale-gen $LANG
 
