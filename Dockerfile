@@ -16,9 +16,8 @@ RUN apt-get -qy --force-yes dist-upgrade
 RUN apt-get install -qy avahi-daemon avahi-utils libavahi-client3 wget
 
 # Download and install Plex (non plexpass)
-# This gets the latest non-plexpass version
-#ENV PLEX=`wget -q --no-check-certificate -O - https://plex.tv/downloads | grep -o '[^"'"'"']*amd64.deb'|grep -v binaries`
-RUN wget -P /tmp `wget -q --no-check-certificate -O - https://plex.tv/downloads | grep -o '[^"'"'"']*amd64.deb'|grep -v binaries`
+# Currently static version - will update to dynamic later
+RUN wget -P /tmp https://downloads.plex.tv/plex-media-server/0.9.11.5.774-760cb52/plexmediaserver_0.9.11.5.774-760cb52_amd64.deb
 RUN dpkg -i /tmp/plex*.deb
 RUN rm -f /tmp/plex*.deb
 
