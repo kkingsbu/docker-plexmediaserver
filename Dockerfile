@@ -17,7 +17,7 @@ RUN apt-get install -qy avahi-daemon avahi-utils libavahi-client3 wget
 
 # Download and install Plex (non plexpass)
 # Currently static version - will update to dynamic later
-RUN wget -P /tmp https://downloads.plex.tv/plex-media-server/0.9.11.10.844-4eb458f/plexmediaserver_0.9.11.10.844-4eb458f_amd64.deb
+RUN wget -P /tmp https://downloads.plex.tv/plex-media-server/0.9.11.14.947-b382187/plexmediaserver_0.9.11.14.947-b382187_amd64.deb
 RUN dpkg -i /tmp/plex*.deb
 RUN rm -f /tmp/plex*.deb
 
