@@ -22,7 +22,7 @@ RUN dpkg -i /tmp/plex*.deb
 RUN rm -f /tmp/plex*.deb
 
 EXPOSE 32400
-VOLUME /volumes/plex
+VOLUME /volumes/config
 VOLUME /volumes/media
 VOLUME /volumes/tmp
 
