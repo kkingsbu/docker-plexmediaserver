@@ -23,7 +23,7 @@ There is an assumption that you will store your Plex Library and all your Media 
 
 *latest* tag:
 
-``sudo docker run --restart always -d --name="plexmediaserver" -h plexmediaserver -v /etc/localtime:/etc/localtime:ro -v <plex_library_folder_on_host>:/volumes/plex -v <temp_folder_on_host>:/volumes/tmp -v <media_folder_on_host>:/volumes/media -p 32400:32400 jrarseneau/plexmediaserver``
+``sudo docker run --restart always -d --name="plexmediaserver" -h plexmediaserver -v /etc/localtime:/etc/localtime:ro -v <plex_library_folder_on_host>:/volumes/config -v <temp_folder_on_host>:/volumes/tmp -v <media_folder_on_host>:/volumes/media -p 32400:32400 jrarseneau/plexmediaserver``
 
 *plexpass* tag:
 
