@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM phusion/baseimage:0.9.16
 MAINTAINER J.R. Arseneau <http://github.com/jrarseneau>
 
 ENV LANG en_US.UTF-8
@@ -26,8 +26,8 @@ VOLUME /volumes/config
 VOLUME /volumes/media
 VOLUME /volumes/tmp
 
-ADD start.sh /
+RUN mkdir /etc/service/plexmediaserver
+ADD start.sh /etc/service/plexmediaserver/run
 ADD plexmediaserver /etc/default/plexmediaserver
-RUN chmod +x /start.sh
 
-ENTRYPOINT ["/start.sh"]
+CMD ["/sbin/my_init"]
