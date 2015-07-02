@@ -1,13 +1,10 @@
-# Plex Media Server Docker Image
+# Plex Media Server Docker Image for i386 archs
 
-This is a Plex Media Server ([plex.tv](http://plex.tv)) Docker image that contains lets you easily spin up an instance of Plex Media Server. 
+This is a Plex Media Server ([plex.tv](http://plex.tv)) Docker image that lets you easily spin up an instance of Plex Media Server. 
 
-It contains two tags:
+This container is based on the jrarseneau/plexmediaserver container and adapted for the i386 architectures
 
-1. ``latest``: regular version (non PlexPass). *master* branch.
-2. ``plexpass``: PlexPass version. *plexpass* branch.
-
-The regular version will automatically detect the latest version available on [plex.tv/downloads](http://plex.tv/downloads). **If you know how I can detect the newest PlexPass version automatically, drop me a comment.**
+It currently supports only non PlexPass in the latest image.
 
 ## Exposed Volumes
 
@@ -23,8 +20,4 @@ There is an assumption that you will store your Plex Library and all your Media 
 
 *latest* tag:
 
-``sudo docker run --restart always -d --name="plexmediaserver" -h plexmediaserver -v /etc/localtime:/etc/localtime:ro -v <plex_library_folder_on_host>:/volumes/config -v <temp_folder_on_host>:/volumes/tmp -v <media_folder_on_host>:/volumes/media -p 32400:32400 jrarseneau/plexmediaserver``
-
-*plexpass* tag:
-
-``sudo docker run --restart always -d --name="plexmediaserver" -h plexmediaserver -v /etc/localtime:/etc/localtime:ro -v <plex_library_folder_on_host>:/volumes/plex -v <temp_folder_on_host>:/volumes/tmp -v <media_folder_on_host>:/volumes/media -p 32400:32400 jrarseneau/plexmediaserver:plexpass``
+``sudo docker run --restart always -d --name="plexmediaserver" -h plexmediaserver -v /etc/localtime:/etc/localtime:ro -v <plex_library_folder_on_host>:/volumes/config -v <temp_folder_on_host>:/volumes/tmp -v <media_folder_on_host>:/volumes/media -p 32400:32400 kkingsbu/plexmediaserver-i386``
